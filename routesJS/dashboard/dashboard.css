@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+#template {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: transparent;
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+#leftNavigation {
+    width: 120px;
+    height: 100%;
+    background-color: #FF8901;
+    position: absolute;
+
+    left: 0%;
+
+}
+
+#logo-area {
+    width: 100%;
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    color: white;
+
+    font-weight: 900;
+    font-size: 19px;
+}
+
+#logout-area {
+    width: 52px;
+    height: 52px;
+
+    cursor: pointer;
+    position: absolute;
+    bottom: 5%;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#button-area {
+    width: 100%;
+    height: 60%;
+
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    padding-top: 20px;
+
+    gap: 1.5rem;
+}
+
+.navBtn {
+    width: 52px;
+    height: 52px;
+
+    cursor: pointer;
+
+    background-color: transparent;
+
+    transition: 0.2s;
+}
+
+.navBtn:hover {
+    transform: scale(1.1);
+}
+
+
+#main-template {
+    width: 100%;
+    height: 100%;
+    background-color: #F2F4F5;
+
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+
+
+/*  main teemplates for the buttons template*/
+.btn-main-template {
+    width: 85%;
+    height: 90%;
+    background-color: transparent;
+    margin-left: 10vw;
+
+    position: relative;
+
+    box-shadow: 0px 0px 45px -16px rgba(92, 92, 92, 1);
+}
+
+
+
+
+/* FOR HOME  --------------------------------------------------------------------------------------*/
+
+#homeDashboard {
+    background-color: white;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-container {
+    width: 95%;
+    height: 90%;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+}
+
+
+
+
+
+
+/* FOR REGISTERED USER ---------------------------------------------------------------------------------*/
+
+
+#registerUserDashboard {
+
+    background-color: white;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+}
+
+#regUser-container {
+    width: 95%;
+    height: 80%;
+
+
+
+
+    overflow: hidden;
+
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#top-area {
+    width: 100%;
+    height: 100px;
+
+    background-color: #F8F8F8;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-area-text {
+    width: 250px;
+    /*TANDAAN mo width neto*/
+    height: 90%;
+
+    background-color: transparent;
+
+    font-weight: 500;
+
+    color: #8E95A9;
+
+    font-size: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-area {
+    width: 100%;
+    height: 90%;
+
+    background-color: #CDD1DE;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    gap: 0.1rem;
+
+    overflow-y: auto;
+
+}
+
+.box-regUser {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-regUser-inside {
+    width: 250px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+
+/*FOR INFO ------------------------------------------------------------------------------------------------------*/
+
+#infoDashboard {
+
+    background-color: white;
+
+    border-radius: 15px;
+
+}
+
+#info-container {
+    width: 95%;
+    height: 67%;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+}
+
+.dash-names {
+    font-size: 24px;
+    color: #FF8901;
+
+    font-weight: 600;
+}
+
+.black {
+    font-size: 24px;
+    display: inline;
+
+    color: black;
+}
