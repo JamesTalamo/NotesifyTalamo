@@ -25,8 +25,8 @@ let mainPage = () => {
     console.log("Logged in!")
 
 
-    // window.location.href = 'http://localhost:7979/auth';
-    window.location.href = 'https://notesifyfrontend.onrender.com/auth'
+    window.location.href = 'http://localhost:7979/auth';
+    // window.location.href = 'https://notesifyfrontend.onrender.com/auth'
 
 }
 
