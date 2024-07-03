@@ -118,7 +118,9 @@ loginForm.addEventListener('submit', (e) => {
 
             let data = await res.json()
 
-            mainPage()
+            setTimeout(() => {
+                mainPage()
+            }, 5000);
 
         } catch (error) {
             alert(error.message)
