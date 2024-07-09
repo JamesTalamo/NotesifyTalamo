@@ -24,7 +24,6 @@ let registerToLoginFormTransition = () => {
 let mainPage = () => {
     console.log("Logged in!")
 
-
     window.location.href = './auth';
     // window.location.href = 'https://notesifyfrontend.onrender.com/auth'
 

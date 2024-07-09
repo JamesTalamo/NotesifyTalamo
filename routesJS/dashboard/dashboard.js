@@ -1,6 +1,7 @@
 let cookie = document.cookie 
 
 let auth = cookie.split(' ')
+console.log(cookie)
 
 let index = auth.findIndex(iteration => iteration.includes('cookieId'))
 let cookieCheck = auth[index].split('=')[1]
