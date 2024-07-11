@@ -24,15 +24,18 @@ let registerToLoginFormTransition = () => {
 let mainPage = () => {
     console.log("Logged in!")
 
-    let cookie = document.cookie
+    // let cookie = document.cookie
 
-    let auth = cookie.split(' ')
-    console.log(cookie)
+    // let auth = cookie.split(' ')
+    // console.log(cookie)
 
-    let index = auth.findIndex(iteration => iteration.includes('cookieId'))
-    let cookieCheck = auth[index].split('=')[1]
+    // let index = auth.findIndex(iteration => iteration.includes('cookieId'))
+    // let cookieCheck = auth[index].split('=')[1]
 
-    let userInfo
+    // let userInfo
+
+    let cookieCheck = localStorage.getItem('cookieId')
+    console.log(cookieCheck)
 
     let fetchData = async () => {
         let URL = `http://localhost:6969/api/${cookieCheck}`
@@ -1059,6 +1062,9 @@ loginForm.addEventListener('submit', (e) => {
             }
 
             let data = await res.json()
+            console.log(data.success)
+
+            localStorage.setItem('cookieId', data.success)
 
             setTimeout(() => {
             mainPage()
