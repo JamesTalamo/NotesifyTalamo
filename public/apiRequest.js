@@ -164,7 +164,8 @@ let mainPage = () => {
 
                     let logoutData = await res.json();
 
-                    window.location.href = 'http://localhost:7979'// babalik sa main page!
+                    window.location.href='https://notesifytalamo.onrender.com'
+                    // window.location.href = 'http://localhost:7979'// babalik sa main page!
 
                 } catch (error) {
                     console.log(error.message);
