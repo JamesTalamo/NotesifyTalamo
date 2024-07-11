@@ -32,7 +32,7 @@ let mainPage = () => {
     // let index = auth.findIndex(iteration => iteration.includes('cookieId'))
     // let cookieCheck = auth[index].split('=')[1]
 
-    // let userInfo
+    let userInfo
 
     let cookieCheck = localStorage.getItem('cookieId')
     console.log(cookieCheck)
@@ -149,8 +149,7 @@ let mainPage = () => {
             e.preventDefault();
 
             let fetchLogout = async () => {
-                console.log(cookie)
-                let URL = 'http://localhost:6969/api/logout';
+                let URL = `http://localhost:6969/api/logout/${cookieCheck}`;
 
                 try {
                     let res = await fetch(URL, {
