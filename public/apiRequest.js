@@ -1060,9 +1060,9 @@ loginForm.addEventListener('submit', (e) => {
 
             let data = await res.json()
 
-            // setTimeout(() => {
+            setTimeout(() => {
             mainPage()
-            // }, 2000);
+            }, 3000);
 
         } catch (error) {
             alert(error.message)
