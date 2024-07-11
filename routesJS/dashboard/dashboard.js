@@ -1,68 +1,70 @@
-let cookie = document.cookie 
+// let cookie = document.cookie 
 
-let auth = cookie.split(' ')
-console.log(cookie)
+// let auth = cookie.split(' ')
+// console.log(cookie)
 
-let index = auth.findIndex(iteration => iteration.includes('cookieId'))
-let cookieCheck = auth[index].split('=')[1]
+// let index = auth.findIndex(iteration => iteration.includes('cookieId'))
+// let cookieCheck = auth[index].split('=')[1]
 
-let userInfo
+// let userInfo
 
-let fetchData = async () => {
-    let URL = `http://localhost:6969/api/${cookieCheck}`
+// let fetchData = async () => {
+//     let URL = `http://localhost:6969/api/${cookieCheck}`
 
-    try {
-        let res = await fetch(URL)
-        if (!res.ok) {
-            let errorMes = res.json()
-            throw new Error(errorMes.message)
-        }
-        let data = await res.json()
-        userInfo = data
-    } catch (error) {
-        console.log(error)
-    }
-}
-fetchData()
+//     try {
+//         let res = await fetch(URL)
+//         if (!res.ok) {
+//             let errorMes = res.json()
+//             throw new Error(errorMes.message)
+//         }
+//         let data = await res.json()
+//         userInfo = data
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// fetchData()
 
-setTimeout(() => {
-    console.log(userInfo)
-    console.log(userInfo.success.createdAt.split('T')[0])
-}, 1000)
+// setTimeout(() => {
+//     console.log(userInfo)
+//     console.log(userInfo.success.createdAt.split('T')[0])
+// }, 1000)
 
 
-//Logout 
-let logout = document.querySelector('#logout')
+// //Logout 
+// let logout = document.querySelector('#logout')
 
-logout.addEventListener('click', (e) => {
-    console.log('press logout')
-    e.preventDefault();
+// logout.addEventListener('click', (e) => {
+//     console.log('press logout')
+//     e.preventDefault();
 
-    let fetchLogout = async () => {
-        let URL = 'http://localhost:6969/api/logout';
+//     let fetchLogout = async () => {
+//         console.log(cookie)
+//         let URL = 'http://localhost:6969/api/logout';
 
-        try {
-            let res = await fetch(URL, {
-                method: 'GET',
-                credentials: 'include' // This is important to include cookies
-            });
+//         try {
+//             let res = await fetch(URL, {
+//                 method: 'GET',
+//                 credentials: 'include' // This is important to include cookies
+//             });
 
-            if (!res.ok) {
-                let errorMes = await res.json();
-                throw new Error(errorMes.message);
-            }
+//             if (!res.ok) {
+//                 let errorMes = await res.json();
+//                 throw new Error(errorMes.message);
+//             }
 
-            let logoutData = await res.json();
+//             let logoutData = await res.json();
+//             console.log(logoutData)
 
-            window.location.href = 'http://localhost:7979'// babalik sa main page!
+//             window.location.href = 'http://localhost:7979'// babalik sa main page!
 
-        } catch (error) {
-            console.log(error.message);
-        }
-    };
+//         } catch (error) {
+//             console.log(error.message);
+//         }
+//     };
 
-    fetchLogout();
-});
+//     fetchLogout();
+// });
 
 
 
