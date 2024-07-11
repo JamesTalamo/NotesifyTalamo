@@ -1062,7 +1062,7 @@ loginForm.addEventListener('submit', (e) => {
 
             setTimeout(() => {
             mainPage()
-            }, 3000);
+            }, 5000);
 
         } catch (error) {
             alert(error.message)
