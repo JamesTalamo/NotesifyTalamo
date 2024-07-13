@@ -1068,7 +1068,7 @@ loginForm.addEventListener('submit', (e) => {
 
             setTimeout(() => {
             mainPage()
-            }, 5000);
+            }, 3000);
 
         } catch (error) {
             alert(error.message)
