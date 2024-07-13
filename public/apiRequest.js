@@ -38,7 +38,7 @@ let mainPage = () => {
     console.log(cookieCheck)
 
     let fetchData = async () => {
-        let URL = `http://localhost:6969/api/${cookieCheck}`
+        let URL = `https://notesifytalamobackend.onrender.com/api/${cookieCheck}`
 
         try {
             let res = await fetch(URL)
@@ -149,7 +149,7 @@ let mainPage = () => {
             e.preventDefault();
 
             let fetchLogout = async () => {
-                let URL = `http://localhost:6969/api/logout/${cookieCheck}`;
+                let URL = `https://notesifytalamobackend.onrender.com/api/logout/${cookieCheck}`;
 
                 try {
                     let res = await fetch(URL, {
@@ -348,7 +348,7 @@ let mainPage = () => {
                             }
 
                             let fetchPost = async () => {
-                                let url = 'http://localhost:6969/postRoutes/addPost'
+                                let url = 'https://notesifytalamobackend.onrender.com/postRoutes/addPost'
 
                                 try {
                                     let res = await fetch(url, {
@@ -409,7 +409,7 @@ let mainPage = () => {
 
 
                     let fetchAllPost = async () => {
-                        let url = 'http://localhost:6969/postRoutes/allPost'
+                        let url = 'https://notesifytalamobackend.onrender.com/postRoutes/allPost'
 
                         try {
                             let res = await fetch(url)
@@ -530,7 +530,7 @@ let mainPage = () => {
                                     let para1 = element._id
                                     let para2 = element.name
 
-                                    let url = `http://localhost:6969/postRoutes/${para1}/${para2}`
+                                    let url = `https://notesifytalamobackend.onrender.com/postRoutes/${para1}/${para2}`
 
                                     let sendFetch = async () => {
 
@@ -652,7 +652,7 @@ let mainPage = () => {
                     {
 
                         let fetchAllUser = async () => {
-                            let url = 'http://localhost:6969/api/all'
+                            let url = 'https://notesifytalamobackend.onrender.com/api/all'
                             try {
                                 let res = await fetch(url)
                                 if (!res.ok) throw new error('Error with fetch line 135 dashboard.js')
@@ -843,7 +843,7 @@ let mainPage = () => {
 
 
                     let fetchAllPost = async () => {
-                        let url = `http://localhost:6969/postRoutes/${userInfo.success.username}`
+                        let url = `https://notesifytalamobackend.onrender.com/postRoutes/${userInfo.success.username}`
 
                         try {
                             let res = await fetch(url, {
@@ -992,7 +992,7 @@ registerForm.addEventListener('submit', (e) => {
     }
 
     let fetchRegister = async () => {
-        let URL = "http://localhost:6969/api/register"
+        let URL = "https://notesifytalamobackend.onrender.com/api/register"
 
         let obj = {
             "user": username,
@@ -1042,7 +1042,7 @@ loginForm.addEventListener('submit', (e) => {
     }
 
     let fetchLogin = async () => {
-        let URL = "http://localhost:6969/api/login"
+        let URL = "https://notesifytalamobackend.onrender.com/api/login"
 
         let req = new Request(URL, {
             method: "POST",
