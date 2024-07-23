@@ -24,8 +24,8 @@
 /* para sa box sa loob ng box container */
 
 .box{
-    width: 20%;
-    height: 45%;
+    width: 150px;
+    height: 50%;
     background-color: white;
 
     border-radius: 15px;
@@ -39,6 +39,7 @@
     left: 15%;
     top: 25%;
 
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -48,6 +49,6 @@
     left: 15%;
     top: 50%;
 
-    font-size: 26px;
+    font-size: 14px;
     font-weight: 700;
 }

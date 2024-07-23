@@ -784,6 +784,7 @@ let mainPage = () => {
                 // ito yung container nung 3 box
                 {
                     let boxContainer = document.createElement('div')
+                    boxContainer.style.flexShrink='0'
                     boxContainer.style.width = '100%'
                     boxContainer.style.height = '30%'
                     boxContainer.style.display = 'flex'
@@ -875,6 +876,7 @@ let mainPage = () => {
                             postBox.style.position = 'relative'
                             postBox.style.marginTop = '50px'
                             postBox.style.marginBottom = '50px'
+                            postBox.classList.add('infoBoxesRes')
 
                             let profileSection = document.createElement('div')
                             profileSection.style.width = '90%'
@@ -885,15 +887,16 @@ let mainPage = () => {
                             profileSection.style.left = '50%'
                             profileSection.style.transform = 'translateX(-50%)'
 
-                            let profileSectionCircle = document.createElement('div')
-                            profileSectionCircle.style.height = '70px'
-                            profileSectionCircle.style.width = '70px'
-                            profileSectionCircle.style.position = 'absolute'
-                            profileSectionCircle.style.top = '50%'
-                            profileSectionCircle.style.backgroundColor = 'green'
-                            profileSectionCircle.style.transform = 'translateY(-50%)'
-                            profileSectionCircle.style.borderRadius = '50%'
-                            profileSectionCircle.style.left = '3%'
+                            // let profileSectionCircle = document.createElement('div')
+                            // profileSectionCircle.style.height = '70px'
+                            // profileSectionCircle.style.width = '70px'
+                            // profileSectionCircle.style.position = 'absolute'
+                            // profileSectionCircle.style.top = '50%'
+                            // profileSectionCircle.style.backgroundColor = 'green'
+                            // profileSectionCircle.style.transform = 'translateY(-50%)'
+                            // profileSectionCircle.style.borderRadius = '50%'
+                            // profileSectionCircle.style.left = '3%'
+                            // profileSectionCircle.classList.add('profileSectionCircleRes')
 
                             let profileSectionName = document.createElement('text')
                             profileSectionName.style.width = '150px'
@@ -901,24 +904,29 @@ let mainPage = () => {
                             profileSectionName.style.position = 'absolute'
                             profileSectionName.style.transform = 'translateY(-50%)'
                             profileSectionName.style.top = '50%'
-                            profileSectionName.style.left = '20%'
+                            profileSectionName.style.left = '10%'
                             profileSectionName.style.fontSize = '24px'
                             profileSectionName.style.fontWeight = '800'
                             profileSectionName.innerText = element.name
 
                             let dateSection = document.createElement('text')
-                            dateSection.style.width = '200px'
+                            dateSection.style.width = '100px'
+                            dateSection.style.height='80px'
                             dateSection.style.position = 'absolute'
                             dateSection.style.transform = 'translateY(-50%)'
                             dateSection.style.top = '50%'
                             dateSection.style.right = '0%'
-                            dateSection.style.fontSize = '18px'
+                            dateSection.style.fontSize = '15px'
                             dateSection.style.fontWeight = '200'
-                            dateSection.innerText = element.createdAt
+                            dateSection.innerText = element.createdAt.split('T')[0]
+                            dateSection.style.display='flex'
+                            dateSection.style.alignItems='center'
+                            dateSection.style.justifyContent='center'
+                            dateSection.classList.add('dateSectionRes')
 
                             profileSection.appendChild(dateSection)
                             profileSection.appendChild(profileSectionName)
-                            profileSection.appendChild(profileSectionCircle)
+                            // profileSection.appendChild(profileSectionCircle)
 
 
 
@@ -934,7 +942,7 @@ let mainPage = () => {
                             mainSectionBox.style.alignItems = 'center'
                             mainSectionBox.style.justifyContent = 'center'
                             mainSectionBox.style.fontWeight = '800'
-                            mainSectionBox.style.fontSize = '24px'
+                            mainSectionBox.style.fontSize = '20px'
                             mainSectionBox.innerText = element.content
 
                             let interactionSection = document.createElement('div')

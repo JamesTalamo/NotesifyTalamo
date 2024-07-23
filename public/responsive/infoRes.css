@@ -43,9 +43,9 @@
         position: relative;
         bottom: initial;
 
-        left:-3%;
+        left: -3%;
         top: 50%;
-        transform:translateY(-50%);
+        transform: translateY(-50%);
     }
 
 
@@ -65,5 +65,19 @@
 
     .box-text-value {
         font-size: 16px;
+    }
+}
+
+@media(max-width: 550px) {
+    .infoBoxesRes{
+        max-width: 90%;
+    }
+
+    .profileSectionCircleRes{
+        background-color: red;
+    }
+
+    .dateSectionRes{
+        max-width: 100%;
     }
 }
