@@ -1,1 +1,30 @@
 /* MAIN DASHNOARD RESPONSIVE */
+
+@media (max-width: 1215px) {
+    #homeDashboard {
+        margin-left: 15vw;
+    }
+}
+
+@media (max-width: 800px) {
+    #homeDashboard {
+        width: 100%;
+        height: 100;
+        margin-left: 0;
+        top: 0;
+    }
+}
+
+@media(max-width: 550px) {
+    .postBoxRes{
+        max-width: 90%;
+    }
+
+    .likeCountRes{
+        font-size: 12px;
+    }
+
+    .inputBoxPostRes{
+        max-width: 90%;
+    }
+}

@@ -265,6 +265,7 @@ let mainPage = () => {
                         inputBoxPost.style.flexDirection = 'column'
                         inputBoxPost.style.position = 'relative'
                         inputBoxPost.style.overflow = 'hidden'
+                        inputBoxPost.classList.add('inputBoxPostRes')
                         inputBoxPost.addEventListener('click', (e) => {
                             e.stopPropagation()
                         })
@@ -429,12 +430,13 @@ let mainPage = () => {
 
                         postInfos.forEach(element => {
                             let postBox = document.createElement('div')
-                            postBox.style.height = '650px'
-                            postBox.style.width = '650px'
+                            postBox.style.height = '550px'
+                            postBox.style.width = '550px'
                             postBox.style.backgroundColor = '#F0F2F5'
                             // postBox.style.flexShrink = '0'
                             postBox.style.borderRadius = '15px'
                             postBox.style.position = 'relative'
+                            postBox.classList.add('postBoxRes')
 
                             let profileSection = document.createElement('div')
                             profileSection.style.width = '90%'
@@ -445,15 +447,15 @@ let mainPage = () => {
                             profileSection.style.left = '50%'
                             profileSection.style.transform = 'translateX(-50%)'
 
-                            let profileSectionCircle = document.createElement('div')
-                            profileSectionCircle.style.height = '50px'
-                            profileSectionCircle.style.width = '50px'
-                            profileSectionCircle.style.position = 'absolute'
-                            profileSectionCircle.style.top = '50%'
-                            profileSectionCircle.style.backgroundColor = '#FF8901'
-                            profileSectionCircle.style.transform = 'translateY(-50%)'
-                            profileSectionCircle.style.borderRadius = '50%'
-                            profileSectionCircle.style.left = '3%'
+                            // let profileSectionCircle = document.createElement('div')
+                            // profileSectionCircle.style.height = '50px'
+                            // profileSectionCircle.style.width = '50px'
+                            // profileSectionCircle.style.position = 'absolute'
+                            // profileSectionCircle.style.top = '50%'
+                            // profileSectionCircle.style.backgroundColor = '#FF8901'
+                            // profileSectionCircle.style.transform = 'translateY(-50%)'
+                            // profileSectionCircle.style.borderRadius = '50%'
+                            // profileSectionCircle.style.left = '3%'
 
                             let profileSectionName = document.createElement('text')
                             profileSectionName.style.width = '150px'
@@ -461,24 +463,24 @@ let mainPage = () => {
                             profileSectionName.style.position = 'absolute'
                             profileSectionName.style.transform = 'translateY(-50%)'
                             profileSectionName.style.top = '50%'
-                            profileSectionName.style.left = '20%'
+                            profileSectionName.style.left = '10%'
                             profileSectionName.style.fontSize = '24px'
                             profileSectionName.style.fontWeight = '800'
                             profileSectionName.innerText = element.name
 
                             let dateSection = document.createElement('text')
-                            dateSection.style.width = '200px'
+                            dateSection.style.width = '100px'
                             dateSection.style.position = 'absolute'
                             dateSection.style.transform = 'translateY(-50%)'
                             dateSection.style.top = '50%'
                             dateSection.style.right = '0%'
-                            dateSection.style.fontSize = '18px'
-                            dateSection.style.fontWeight = '200'
+                            dateSection.style.fontSize = '10px'
+                            dateSection.style.fontWeight = '800'
                             dateSection.innerText = element.createdAt
 
                             profileSection.appendChild(dateSection)
                             profileSection.appendChild(profileSectionName)
-                            profileSection.appendChild(profileSectionCircle)
+                            // profileSection.appendChild(profileSectionCircle)
 
 
 
@@ -513,7 +515,6 @@ let mainPage = () => {
 
                             {
                                 let like = document.createElement('div')
-                                like.classList.add('like')
                                 like.style.width = '100px'
                                 like.style.height = '50px'
                                 like.style.backgroundColor = 'lightgrey'
@@ -524,6 +525,7 @@ let mainPage = () => {
                                 like.style.cursor = 'pointer'
                                 like.style.borderRadius = '15px'
                                 like.style.fontWeight = '800'
+                                like.classList.add('likeRes')
 
                                 like.addEventListener('click', (e) => {
                                     e.preventDefault()
@@ -559,6 +561,7 @@ let mainPage = () => {
                                 })
 
                                 let likeCount = document.createElement('text')
+                                likeCount.classList.add('likeCountRes')
                                 likeCount.innerText = `${element.likes} People liked this Post`
 
 
