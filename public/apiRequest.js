@@ -607,7 +607,6 @@ let mainPage = () => {
                 templateRegUser.id = 'registerUserDashboard'
                 templateRegUser.classList.add('btn-main-template')
 
-
                 {
                     let text = document.createElement('text')
                     text.innerText = 'Registered Users'
@@ -701,8 +700,8 @@ let mainPage = () => {
 
                                 if (element.username !== userInfo.success.username) {
                                     let boxInisdeBox4 = document.createElement('img')
-                                    boxInisdeBox4.style.width = '20%'
-                                    boxInisdeBox4.style.height = '40%'
+                                    boxInisdeBox4.style.width = '35px'
+                                    boxInisdeBox4.style.height = '35px'
                                     boxInisdeBox4.style.padding = '3%'
                                     boxInisdeBox4.style.borderRadius = '15px'
                                     boxInisdeBox4.style.cursor = 'pointer'
@@ -784,7 +783,7 @@ let mainPage = () => {
                 // ito yung container nung 3 box
                 {
                     let boxContainer = document.createElement('div')
-                    boxContainer.style.flexShrink='0'
+                    boxContainer.style.flexShrink = '0'
                     boxContainer.style.width = '100%'
                     boxContainer.style.height = '30%'
                     boxContainer.style.display = 'flex'
@@ -911,7 +910,7 @@ let mainPage = () => {
 
                             let dateSection = document.createElement('text')
                             dateSection.style.width = '100px'
-                            dateSection.style.height='80px'
+                            dateSection.style.height = '80px'
                             dateSection.style.position = 'absolute'
                             dateSection.style.transform = 'translateY(-50%)'
                             dateSection.style.top = '50%'
@@ -919,9 +918,9 @@ let mainPage = () => {
                             dateSection.style.fontSize = '15px'
                             dateSection.style.fontWeight = '200'
                             dateSection.innerText = element.createdAt.split('T')[0]
-                            dateSection.style.display='flex'
-                            dateSection.style.alignItems='center'
-                            dateSection.style.justifyContent='center'
+                            dateSection.style.display = 'flex'
+                            dateSection.style.alignItems = 'center'
+                            dateSection.style.justifyContent = 'center'
                             dateSection.classList.add('dateSectionRes')
 
                             profileSection.appendChild(dateSection)
@@ -1075,7 +1074,7 @@ loginForm.addEventListener('submit', (e) => {
             localStorage.setItem('cookieId', data.success)
 
             setTimeout(() => {
-            mainPage()
+                mainPage()
             }, 3000);
 
         } catch (error) {
