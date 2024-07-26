@@ -9,9 +9,10 @@
 @media (max-width: 800px) {
     #homeDashboard {
         width: 100%;
+        height: 82%;
        
         margin-left: 0;
-        top: 0;
+        top: 5%;
     }
 }
 
