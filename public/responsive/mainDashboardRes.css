@@ -27,5 +27,7 @@
 
     .inputBoxPostRes{
         max-width: 90%;
+        top: -10%;
     }
+    
 }
