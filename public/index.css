@@ -8,6 +8,7 @@ body,
 
     color: #000000;
     font-weight: 400;
+    /* overflow: hidden; */
 }
 
 .template {
@@ -15,6 +16,7 @@ body,
     height: 100vh;
 
     background-color: white;
+    overflow: hidden;
 }
 
 /*LOGIN PAGE*/
