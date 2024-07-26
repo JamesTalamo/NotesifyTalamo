@@ -200,9 +200,10 @@ let mainPage = () => {
                     let text = document.createElement('text')
                     text.innerText = 'News Feed'
                     text.classList.add('reg-users-text')
-                    text.style.position = 'absolute'
-                    text.style.left = '0'
-                    text.style.top = '-4%'
+                    // text.id='regUserTextRes'
+                    // text.style.position = 'absolute'
+                    // text.style.left = '0'
+                    // text.style.top = '-4%'
                     templateHome.appendChild(text)
                 }
 
@@ -614,9 +615,7 @@ let mainPage = () => {
                     let text = document.createElement('text')
                     text.innerText = 'Registered Users'
                     text.classList.add('reg-users-text')
-                    text.style.position = 'absolute'
-                    text.style.left = '0'
-                    text.style.top = '-4%'
+                    text.id='regUserRes'
                     templateRegUser.appendChild(text)
                 }
 
