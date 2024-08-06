@@ -164,7 +164,7 @@ let mainPage = () => {
 
                     let logoutData = await res.json();
 
-                    window.location.href='https://notesifytalamo.onrender.com'
+                    window.location.href = 'https://notesifytalamo.onrender.com'
                     // window.location.href = 'http://localhost:7979'// babalik sa main page!
 
                 } catch (error) {
@@ -434,7 +434,6 @@ let mainPage = () => {
                             postBox.style.height = '550px'
                             postBox.style.width = '550px'
                             postBox.style.backgroundColor = '#F0F2F5'
-                            // postBox.style.flexShrink = '0'
                             postBox.style.borderRadius = '15px'
                             postBox.style.position = 'relative'
                             postBox.classList.add('postBoxRes')
@@ -447,16 +446,6 @@ let mainPage = () => {
                             profileSection.style.backgroundColor = 'white'
                             profileSection.style.left = '50%'
                             profileSection.style.transform = 'translateX(-50%)'
-
-                            // let profileSectionCircle = document.createElement('div')
-                            // profileSectionCircle.style.height = '50px'
-                            // profileSectionCircle.style.width = '50px'
-                            // profileSectionCircle.style.position = 'absolute'
-                            // profileSectionCircle.style.top = '50%'
-                            // profileSectionCircle.style.backgroundColor = '#FF8901'
-                            // profileSectionCircle.style.transform = 'translateY(-50%)'
-                            // profileSectionCircle.style.borderRadius = '50%'
-                            // profileSectionCircle.style.left = '3%'
 
                             let profileSectionName = document.createElement('text')
                             profileSectionName.style.width = '150px'
@@ -481,9 +470,6 @@ let mainPage = () => {
 
                             profileSection.appendChild(dateSection)
                             profileSection.appendChild(profileSectionName)
-                            // profileSection.appendChild(profileSectionCircle)
-
-
 
                             let mainSectionBox = document.createElement('div')
                             mainSectionBox.style.width = '90%'
@@ -516,7 +502,7 @@ let mainPage = () => {
 
                             {
                                 let like = document.createElement('div')
-                                like.style.width = '100px'
+                                like.style.width = '70px'
                                 like.style.height = '50px'
                                 like.style.backgroundColor = 'lightgrey'
                                 like.innerText = 'Like'
@@ -561,18 +547,255 @@ let mainPage = () => {
 
                                 })
 
+                                //LOGIC FOR COMMENT SECTION AREA
+                                let comment = document.createElement('div')
+                                comment.style.width = '70px'
+                                comment.style.height = '50px'
+                                comment.style.backgroundColor = 'lightgrey'
+                                comment.innerText = 'Comments'
+                                comment.style.display = 'flex'
+                                comment.style.alignItems = 'center'
+                                comment.style.justifyContent = 'center'
+                                comment.style.cursor = 'pointer'
+                                comment.style.borderRadius = '15px'
+                                comment.style.fontSize = '12px'
+                                comment.style.fontWeight = '800'
+                                comment.classList.add('likeRes')
+
+                                //Ito yung logic for the comment ituloy mo nalang
+                                comment.addEventListener('click', () => {
+
+                                    // console.log(`Post ni ${element.name} at ${element._id}, nag comment si ${userInfo.success.username}`)
+
+                                    e.preventDefault()
+
+                                    let mainTemplate = document.querySelector('#main-template')
+
+
+                                    let commentTemplate = document.createElement('div');
+                                    commentTemplate.id = 'commentTemplate';
+                                    commentTemplate.style.width = '100vw';
+                                    commentTemplate.style.height = '100vh';
+                                    commentTemplate.style.backgroundColor = 'green';
+                                    commentTemplate.style.position = 'absolute';
+                                    commentTemplate.style.background = 'rgba(255, 255, 255, 0.1)';
+                                    commentTemplate.style.backdropFilter = 'blur(6px)';
+                                    commentTemplate.style.display = 'flex'
+                                    commentTemplate.style.alignItems = 'center'
+                                    commentTemplate.style.justifyContent = 'center'
+
+                                    commentTemplate.addEventListener('click', (e) => {
+
+                                        mainTemplate.childNodes.forEach(element => {
+                                            if (element.id === 'commentTemplate') {
+                                                mainTemplate.removeChild(element)
+                                            }
+                                        })
+                                    });
+
+                                    let inputBoxPost = document.createElement('div')
+                                    inputBoxPost.style.width = '80%'
+                                    inputBoxPost.style.height = '500px'
+                                    inputBoxPost.style.backgroundColor = 'white'
+                                    inputBoxPost.style.borderRadius = '20px'
+                                    inputBoxPost.style.boxShadow = '0px 0px 20px rgba(0, 0, 0, 0.2)';
+                                    inputBoxPost.style.display = 'flex'
+                                    inputBoxPost.style.alignItems = 'center'
+                                    inputBoxPost.style.justifyContent = 'center'
+                                    inputBoxPost.style.flexDirection = 'column'
+                                    inputBoxPost.style.position = 'relative'
+                                    inputBoxPost.style.overflow = 'hidden'
+                                    inputBoxPost.classList.add('inputBoxPostRes')
+                                    inputBoxPost.addEventListener('click', (e) => {
+                                        e.stopPropagation()
+                                    })
+
+                                    let commentSecTopText = document.createElement('text')
+                                    commentSecTopText.style.fontSize = '15px'
+                                    commentSecTopText.style.position = 'absolute'
+                                    commentSecTopText.style.left = '50%'
+                                    commentSecTopText.style.transform = 'translateX(-50%)'
+                                    commentSecTopText.style.top = '3%'
+                                    commentSecTopText.style.fontWeight = '800'
+                                    commentSecTopText.innerText = 'COMMENTS'
+
+
+                                    //Dito malalagay yung comments
+                                    let commentsArea = document.createElement('div')
+                                    commentsArea.id = 'commentsArea'
+                                    commentsArea.style.position = 'absolute'
+                                    commentsArea.style.width = '100%'
+                                    commentsArea.style.height = '400px'
+                                    commentsArea.style.backgroundColor = 'red'
+                                    commentsArea.style.top = '10%'
+                                    commentsArea.style.display = 'flex'
+                                    commentsArea.style.alignItems = 'center'
+                                    commentsArea.style.justifyContent = 'center'
+                                    commentsArea.style.flexDirection = 'column'
+                                    commentsArea.style.gap = '1rem'
+
+
+                                    let formCommmentSec = document.createElement('form')
+                                    formCommmentSec.style.width = '100%'
+                                    formCommmentSec.style.height = '50px'
+                                    formCommmentSec.style.position = 'absolute'
+                                    formCommmentSec.style.bottom = '0%'
+                                    formCommmentSec.style.backgroundColor = 'green'
+                                    formCommmentSec.style.display = 'flex'
+                                    formCommmentSec.style.alignItems = 'center'
+                                    formCommmentSec.style.justifyContent = 'space-around'
+
+                                    {
+                                        let commentsInput = document.createElement('input')
+                                        commentsInput.style.width = '90%'
+                                        commentsInput.style.height = '30px'
+                                        commentsInput.style.position = 'relative'
+                                        commentsInput.id = 'commentsInput'
+
+                                        let commentsInputOk = document.createElement('button')
+                                        commentsInputOk.type = 'submit'
+                                        commentsInputOk.style.width = '50px'
+                                        commentsInputOk.style.height = '30px'
+
+                                        commentsInputOk.addEventListener('click', (e) => {
+                                            e.preventDefault()
+
+                                            let url = `http://notesifytalamobackend.onrender.com/comments/add/${element._id}`
+
+                                            commentApiStructure = {// dito ilalagay yung request
+                                                "commenter": `${userInfo.success.username}`,
+                                                "comment": `${commentsInput.value}`
+                                            }
+
+                                            let commentApiReqFetch = async () => {
+                                                try {
+                                                    let req = await fetch(url, {
+                                                        method: "POST",
+                                                        headers: {
+                                                            "content-type": "application/json",
+                                                        },
+                                                        body: JSON.stringify(commentApiStructure)
+                                                    })
+                                                    let res = req.json()
+                                                    // console.log(res)
+                                                } catch (error) {
+                                                    console.warn
+                                                }
+                                            }
+
+                                            commentApiReqFetch()
+                                            // console.log(commentApiStructure)
+                                            // console.log(url)
+                                            commentsInput.value = ''
+
+                                        })
+
+                                        let requestComments = async (id, date) => {
+                                            let urlApiGetComment = `http://notesifytalamobackend.onrender.com/comments/check/${id}`
+                                            try {
+                                                let req = await fetch(urlApiGetComment, {
+                                                    method: "GET",
+                                                    headers: {
+                                                        "content-type": "application/json"
+                                                    }
+                                                })
+                                                if (!req.ok) throw new Error('Invalid')
+                                                let res = await req.json()
+
+
+                                                let commentsArea = document.querySelector('#commentsArea')
+                                                commentsArea.innerHTML = ''
+
+
+                                                res.forEach(element => {
+                                                    let box = document.createElement('div')
+                                                    box.style.width = '90%'
+                                                    box.style.backgroundColor = 'green'
+                                                    box.style.height = '50px'
+                                                    box.style.position='relative'
+                                                    box.style.flexShrink='0'
+                                                    box.style.display='flex'
+                                                    box.style.alignItems='space-between'
+                                                    box.style.justifyContent='center'
+                                                    
+                                                    let nameArea = document.createElement('p')
+                                                    nameArea.innerText = `${element.commenter}`
+                                                    nameArea.style.width='15%'
+                                                    nameArea.style.height='100%'
+                                                    nameArea.style.textAlign='center'
+                                                    nameArea.style.backgroundColor='pink'
+
+                                                    let text = document.createElement('p')
+                                                    text.style.backgroundColor='blue'
+                                                    text.style.width='70%'
+                                                    text.style.height='100%'
+                                                    text.style.textAlign='center'
+                                                    text.style.fontSize='12px'
+                                                    text.innerText = `${element.comment}`
+
+                                                    let dateTime = document.createElement('p')
+                                                    dateTime.style.backgroundColor='yellow'
+                                                    dateTime.style.width='15%'
+                                                    dateTime.style.height='100%'
+                                                    dateTime.style.textAlign='center'
+                                                    dateTime.style.fontSize='12px'
+                                                    dateTime.innerText = `${element.date}`
+
+                                                    box.appendChild(nameArea)
+                                                    box.appendChild(text)
+                                                    box.appendChild(dateTime)
+
+
+                                                    commentsArea.appendChild(box)
+                                                })
+
+                                                console.log(res)
+                                            } catch (error) {
+                                                console.warn(error)
+                                            }
+
+                                        }
+
+                                        console.log(element._id)
+
+
+                                        if (mainTemplate.innerHTML !== '') {
+                                            intervalId = setInterval(() => {
+
+                                                requestComments(element._id, element.date);
+
+                                                // Check if commentTemplate exists in mainTemplate
+                                                let commentTemplate = mainTemplate.querySelector('#commentTemplate');
+                                                if (!commentTemplate) {
+                                                    clearInterval(intervalId);
+                                                }
+                                            }, 1000);
+                                        }
+
+
+                                        formCommmentSec.appendChild(commentsInput)
+                                        formCommmentSec.appendChild(commentsInputOk)
+
+                                    }
+
+                                    inputBoxPost.appendChild(commentSecTopText)
+                                    inputBoxPost.appendChild(commentsArea)
+                                    inputBoxPost.appendChild(formCommmentSec)
+
+
+                                    commentTemplate.appendChild(inputBoxPost)
+                                    mainTemplate.appendChild(commentTemplate)
+                                })
+
+
                                 let likeCount = document.createElement('text')
                                 likeCount.classList.add('likeCountRes')
                                 likeCount.innerText = `${element.likes} People liked this Post`
 
-
-
                                 interactionSection.appendChild(like)
+                                interactionSection.appendChild(comment)
                                 interactionSection.appendChild(likeCount)
                             }
-
-
-
 
                             postBox.appendChild(profileSection)
                             postBox.appendChild(mainSectionBox)
@@ -615,7 +838,7 @@ let mainPage = () => {
                     let text = document.createElement('text')
                     text.innerText = 'Registered Users'
                     text.classList.add('reg-users-text')
-                    text.id='regUserRes'
+                    text.id = 'regUserRes'
                     templateRegUser.appendChild(text)
                 }
 
