@@ -660,7 +660,7 @@ let mainPage = () => {
                                         commentsInputOk.addEventListener('click', (e) => {
                                             e.preventDefault()
 
-                                            let url = `http://notesifytalamobackend.onrender.com/comments/add/${element._id}`
+                                            let url = `https://notesifytalamobackend.onrender.com/comments/add/${element._id}`
 
                                             commentApiStructure = {// dito ilalagay yung request
                                                 "commenter": `${userInfo.success.username}`,
@@ -691,7 +691,7 @@ let mainPage = () => {
                                         })
 
                                         let requestComments = async (id, date) => {
-                                            let urlApiGetComment = `http://notesifytalamobackend.onrender.com/comments/check/${id}`
+                                            let urlApiGetComment = `https://notesifytalamobackend.onrender.com/comments/check/${id}`
                                             try {
                                                 let req = await fetch(urlApiGetComment, {
                                                     method: "GET",
