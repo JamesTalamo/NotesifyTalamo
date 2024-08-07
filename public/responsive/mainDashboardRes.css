@@ -1,9 +1,8 @@
 /* MAIN DASHNOARD RESPONSIVE */
 
-@media (min-width: 1216px) {
-    #commentBoxRes {
-        width: 90%; 
-    }
+
+#commentBoxRes {
+    width: 90%;
 }
 
 @media (max-width: 1215px) {
