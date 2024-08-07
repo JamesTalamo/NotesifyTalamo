@@ -585,7 +585,7 @@ let mainPage = () => {
                                     });
 
                                     let inputBoxPost = document.createElement('div')
-                                    // inputBoxPost.style.width = '80%'
+                                    // inputBoxPost.style.width = '90%'
                                     inputBoxPost.style.height = '500px'
                                     inputBoxPost.style.backgroundColor = 'white'
                                     inputBoxPost.style.borderRadius = '20px'
