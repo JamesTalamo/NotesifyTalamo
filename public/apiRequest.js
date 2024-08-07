@@ -486,7 +486,6 @@ let mainPage = () => {
                             mainSectionBox.style.fontSize = '24px'
                             mainSectionBox.innerText = element.content
 
-
                             let interactionSection = document.createElement('div')
                             interactionSection.style.width = '90%'
                             interactionSection.style.height = '70px'
@@ -522,7 +521,6 @@ let mainPage = () => {
                                     let url = `https://notesifytalamobackend.onrender.com/postRoutes/${para1}/${para2}`
 
                                     let sendFetch = async () => {
-
                                         try {
                                             let res = await fetch(url, {
                                                 method: 'PATCH',
@@ -541,10 +539,6 @@ let mainPage = () => {
                                     }
                                     sendFetch()
                                     renderPostBox()
-
-
-
-
                                 })
 
                                 //LOGIC FOR COMMENT SECTION AREA
@@ -568,9 +562,7 @@ let mainPage = () => {
                                     // console.log(`Post ni ${element.name} at ${element._id}, nag comment si ${userInfo.success.username}`)
 
                                     e.preventDefault()
-
                                     let mainTemplate = document.querySelector('#main-template')
-
 
                                     let commentTemplate = document.createElement('div');
                                     commentTemplate.id = 'commentTemplate';
@@ -585,7 +577,6 @@ let mainPage = () => {
                                     commentTemplate.style.justifyContent = 'center'
 
                                     commentTemplate.addEventListener('click', (e) => {
-
                                         mainTemplate.childNodes.forEach(element => {
                                             if (element.id === 'commentTemplate') {
                                                 mainTemplate.removeChild(element)
@@ -619,20 +610,22 @@ let mainPage = () => {
                                     commentSecTopText.style.fontWeight = '800'
                                     commentSecTopText.innerText = 'COMMENTS'
 
-
                                     //Dito malalagay yung comments
                                     let commentsArea = document.createElement('div')
                                     commentsArea.id = 'commentsArea'
                                     commentsArea.style.position = 'absolute'
                                     commentsArea.style.width = '100%'
                                     commentsArea.style.height = '400px'
-                                    commentsArea.style.backgroundColor = 'red'
+                                    // commentsArea.style.backgroundColor = 'red'
                                     commentsArea.style.top = '10%'
                                     commentsArea.style.display = 'flex'
                                     commentsArea.style.alignItems = 'center'
-                                    commentsArea.style.justifyContent = 'center'
+                                    commentsArea.style.justifyContent = 'flex-start'
                                     commentsArea.style.flexDirection = 'column'
-                                    commentsArea.style.gap = '1rem'
+                                    commentsArea.style.overflowY = 'scroll'
+                                    commentsArea.style.paddingTop = 'auto'
+                                    // commentsArea.style.paddingTop = '100px'
+                                    // commentsArea.style.paddngBottom = '5%'
 
 
                                     let formCommmentSec = document.createElement('form')
@@ -640,10 +633,11 @@ let mainPage = () => {
                                     formCommmentSec.style.height = '50px'
                                     formCommmentSec.style.position = 'absolute'
                                     formCommmentSec.style.bottom = '0%'
-                                    formCommmentSec.style.backgroundColor = 'green'
+                                    // formCommmentSec.style.backgroundColor = 'green'
                                     formCommmentSec.style.display = 'flex'
                                     formCommmentSec.style.alignItems = 'center'
                                     formCommmentSec.style.justifyContent = 'space-around'
+
 
                                     {
                                         let commentsInput = document.createElement('input')
@@ -656,6 +650,10 @@ let mainPage = () => {
                                         commentsInputOk.type = 'submit'
                                         commentsInputOk.style.width = '50px'
                                         commentsInputOk.style.height = '30px'
+                                        commentsInputOk.style.backgroundColor = 'lightblue'
+                                        commentsInputOk.style.border = '1px solid black'
+                                        commentsInputOk.style.borderRadius = '5px'
+                                        commentsInputOk.style.cursor = 'pointer'
 
                                         commentsInputOk.addEventListener('click', (e) => {
                                             e.preventDefault()
@@ -702,49 +700,52 @@ let mainPage = () => {
                                                 if (!req.ok) throw new Error('Invalid')
                                                 let res = await req.json()
 
-
                                                 let commentsArea = document.querySelector('#commentsArea')
                                                 commentsArea.innerHTML = ''
-
 
                                                 res.forEach(element => {
                                                     let box = document.createElement('div')
                                                     box.style.width = '90%'
-                                                    box.style.backgroundColor = 'green'
-                                                    box.style.height = '50px'
-                                                    box.style.position='relative'
-                                                    box.style.flexShrink='0'
-                                                    box.style.display='flex'
-                                                    box.style.alignItems='space-between'
-                                                    box.style.justifyContent='center'
-                                                    
-                                                    let nameArea = document.createElement('p')
-                                                    nameArea.innerText = `${element.commenter}`
-                                                    nameArea.style.width='15%'
-                                                    nameArea.style.height='100%'
-                                                    nameArea.style.textAlign='center'
-                                                    nameArea.style.backgroundColor='pink'
+                                                    box.style.backgroundColor = '#F0F2F5'
+                                                    box.style.minHeight = '50px'; // Use minHeight to ensure a flexible height
+                                                    box.style.position = 'relative'
+                                                    box.style.flexShrink = '0'
+                                                    box.style.display = 'flex'
+                                                    box.style.alignItems = 'space-between'
+                                                    box.style.justifyContent = 'center'
+                                                    box.style.borderRadius = '15px'
+                                                    box.style.marginTop = '15px'
+                                                    box.style.marginBottom = '15px'
 
+                                                    let nameArea = document.createElement('p')
+                                                    // nameArea.style.backgroundColor='pink'
+                                                    nameArea.innerText = `${element.commenter}`
+                                                    nameArea.style.width = '15%'
+                                                    nameArea.style.height = '100%'
+                                                    nameArea.style.textAlign = 'center'
+                                                    nameArea.style.margin = '0'
+                                                    
                                                     let text = document.createElement('p')
-                                                    text.style.backgroundColor='blue'
-                                                    text.style.width='70%'
-                                                    text.style.height='100%'
-                                                    text.style.textAlign='center'
-                                                    text.style.fontSize='12px'
+                                                    // text.style.backgroundColor='blue'
+                                                    text.style.width = '70%'
+                                                    text.style.height = '100%'
+                                                    text.style.textAlign = 'center'
+                                                    text.style.fontSize = '12px'
                                                     text.innerText = `${element.comment}`
+                                                    text.style.margin = '0'
 
                                                     let dateTime = document.createElement('p')
-                                                    dateTime.style.backgroundColor='yellow'
-                                                    dateTime.style.width='15%'
-                                                    dateTime.style.height='100%'
-                                                    dateTime.style.textAlign='center'
-                                                    dateTime.style.fontSize='12px'
+                                                    // dateTime.style.backgroundColor='yellow'
+                                                    dateTime.style.width = '15%'
+                                                    dateTime.style.height = '100%'
+                                                    dateTime.style.textAlign = 'center'
+                                                    dateTime.style.fontSize = '12px'
                                                     dateTime.innerText = `${element.date}`
+                                                    dateTime.style.margin = '0'
 
                                                     box.appendChild(nameArea)
                                                     box.appendChild(text)
                                                     box.appendChild(dateTime)
-
 
                                                     commentsArea.appendChild(box)
                                                 })
