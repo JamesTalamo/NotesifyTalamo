@@ -585,6 +585,8 @@ let mainPage = () => {
                                     });
 
                                     let inputBoxPost = document.createElement('div')
+                                    // inputBoxPost.style.position='absolute'
+                                    
                                     inputBoxPost.style.height = '500px'
                                     inputBoxPost.style.backgroundColor = 'white'
                                     inputBoxPost.style.borderRadius = '20px'
@@ -594,6 +596,7 @@ let mainPage = () => {
                                     inputBoxPost.style.justifyContent = 'center'
                                     inputBoxPost.style.flexDirection = 'column'
                                     inputBoxPost.style.position = 'relative'
+                                    inputBoxPost.style.top='-12%'
                                     inputBoxPost.style.overflow = 'hidden'
                                     inputBoxPost.id = 'commentBoxRes'
                                     inputBoxPost.addEventListener('click', (e) => {
@@ -704,7 +707,7 @@ let mainPage = () => {
 
                                                 res.forEach(element => {
                                                     let box = document.createElement('div')
-                                                    box.style.width = '90%'
+                                                    box.style.width = '95%'
                                                     box.style.backgroundColor = '#F0F2F5'
                                                     box.style.minHeight = '50px'; // Use minHeight to ensure a flexible height
                                                     box.style.position = 'relative'
@@ -715,6 +718,7 @@ let mainPage = () => {
                                                     box.style.borderRadius = '15px'
                                                     box.style.marginTop = '15px'
                                                     box.style.marginBottom = '15px'
+                                                    box.id = 'boxRes'
 
                                                     let nameArea = document.createElement('p')
                                                     // nameArea.style.backgroundColor='pink'
@@ -723,6 +727,9 @@ let mainPage = () => {
                                                     nameArea.style.height = '100%'
                                                     nameArea.style.textAlign = 'center'
                                                     nameArea.style.margin = '0'
+                                                    nameArea.style.display='flex'
+                                                    nameArea.style.alignItems='center'
+                                                    nameArea.style.justifyContent='center'
 
                                                     let text = document.createElement('p')
                                                     // text.style.backgroundColor='blue'
@@ -739,8 +746,11 @@ let mainPage = () => {
                                                     dateTime.style.height = '100%'
                                                     dateTime.style.textAlign = 'center'
                                                     dateTime.style.fontSize = '12px'
-                                                    dateTime.innerText = `${element.date}`
+                                                    dateTime.innerText = `${element.date.split('T')[0]}`
                                                     dateTime.style.margin = '0'
+                                                    dateTime.style.display='flex'
+                                                    dateTime.style.alignItems='center'
+                                                    dateTime.style.justifyContent='center'
 
                                                     box.appendChild(nameArea)
                                                     box.appendChild(text)
