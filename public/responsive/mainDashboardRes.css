@@ -4,6 +4,10 @@
     #homeDashboard {
         margin-left: 15vw;
     }
+
+    #commentBoxRes{
+        width: 90%;
+    }
 }
 
 @media (max-width: 800px) {
@@ -13,6 +17,10 @@
        
         margin-left: 0;
         top: 5%;
+    }
+
+    #commentBoxRes{
+        width: 100%;
     }
 }
 

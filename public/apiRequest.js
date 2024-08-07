@@ -585,7 +585,7 @@ let mainPage = () => {
                                     });
 
                                     let inputBoxPost = document.createElement('div')
-                                    inputBoxPost.style.width = '80%'
+                                    // inputBoxPost.style.width = '80%'
                                     inputBoxPost.style.height = '500px'
                                     inputBoxPost.style.backgroundColor = 'white'
                                     inputBoxPost.style.borderRadius = '20px'
@@ -597,6 +597,7 @@ let mainPage = () => {
                                     inputBoxPost.style.position = 'relative'
                                     inputBoxPost.style.overflow = 'hidden'
                                     inputBoxPost.classList.add('inputBoxPostRes')
+                                    inputBoxPost.id = 'commentBoxRes'
                                     inputBoxPost.addEventListener('click', (e) => {
                                         e.stopPropagation()
                                     })
@@ -724,7 +725,7 @@ let mainPage = () => {
                                                     nameArea.style.height = '100%'
                                                     nameArea.style.textAlign = 'center'
                                                     nameArea.style.margin = '0'
-                                                    
+
                                                     let text = document.createElement('p')
                                                     // text.style.backgroundColor='blue'
                                                     text.style.width = '70%'
