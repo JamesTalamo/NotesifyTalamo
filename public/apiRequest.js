@@ -595,7 +595,6 @@ let mainPage = () => {
                                     inputBoxPost.style.flexDirection = 'column'
                                     inputBoxPost.style.position = 'relative'
                                     inputBoxPost.style.overflow = 'hidden'
-                                    inputBoxPost.classList.add('inputBoxPostRes')
                                     inputBoxPost.id = 'commentBoxRes'
                                     inputBoxPost.addEventListener('click', (e) => {
                                         e.stopPropagation()
